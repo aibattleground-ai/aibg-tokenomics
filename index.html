@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,47 +19,15 @@
             background: #000000;
             color: #ffffff;
             min-height: 100vh;
-            overflow-x: hidden;
-        }
-        
-        /* Premium Background */
-        .background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: linear-gradient(180deg, #000000 0%, #0a0a14 100%);
-        }
-        
-        .background::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at 30% 30%, rgba(139, 92, 246, 0.08) 0%, transparent 40%),
-                        radial-gradient(circle at 70% 60%, rgba(59, 130, 246, 0.06) 0%, transparent 40%),
-                        radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.04) 0%, transparent 60%);
-            animation: float 20s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            33% { transform: translate(-20px, -20px) rotate(1deg); }
-            66% { transform: translate(20px, -10px) rotate(-1deg); }
         }
         
         .container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 60px 20px;
-            position: relative;
         }
         
-        /* Premium Header */
+        /* Header */
         .header {
             text-align: center;
             margin-bottom: 60px;
@@ -70,7 +39,7 @@
             letter-spacing: -0.04em;
             line-height: 1;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, #8B5CF6 0%, #3B82F6 50%, #EC4899 100%);
+            background: linear-gradient(135deg, #00D4FF 0%, #00FF88 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -80,10 +49,9 @@
             font-size: 18px;
             color: #94a3b8;
             font-weight: 400;
-            letter-spacing: -0.01em;
         }
         
-        /* Premium Tabs */
+        /* Tabs */
         .tabs-container {
             display: flex;
             justify-content: center;
@@ -109,14 +77,13 @@
             font-weight: 600;
             cursor: pointer;
             border-radius: 12px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
+            transition: all 0.3s;
         }
         
         .tab-btn.active {
             color: #ffffff;
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(59, 130, 246, 0.2) 100%);
-            box-shadow: 0 4px 16px rgba(139, 92, 246, 0.2);
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(0, 255, 136, 0.15) 100%);
+            box-shadow: 0 4px 16px rgba(0, 212, 255, 0.2);
         }
         
         .tab-btn:hover:not(.active) {
@@ -138,15 +105,13 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        /* Premium Card */
+        /* Card */
         .card {
-            background: linear-gradient(135deg, rgba(15, 15, 25, 0.8) 0%, rgba(10, 10, 20, 0.9) 100%);
+            background: rgba(10, 10, 10, 0.8);
             backdrop-filter: blur(40px);
             border-radius: 32px;
             padding: 56px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4),
-                        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
         
         /* Distribution Grid */
@@ -164,24 +129,7 @@
             height: 520px;
         }
         
-        .chart-glow {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 60%);
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-            animation: pulse 4s ease-in-out infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
-            50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.05); }
-        }
-        
-        /* Allocation Items */
+        /* Allocations */
         .allocations {
             display: flex;
             flex-direction: column;
@@ -195,7 +143,7 @@
             background: rgba(255, 255, 255, 0.02);
             border-radius: 16px;
             border: 1px solid rgba(255, 255, 255, 0.04);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s;
             position: relative;
             overflow: hidden;
         }
@@ -269,8 +217,8 @@
         }
         
         .stat {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%);
-            border: 1px solid rgba(139, 92, 246, 0.1);
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(0, 255, 136, 0.05) 100%);
+            border: 1px solid rgba(0, 212, 255, 0.1);
             border-radius: 20px;
             padding: 28px;
             text-align: center;
@@ -279,13 +227,13 @@
         
         .stat:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(139, 92, 246, 0.15);
+            box-shadow: 0 12px 24px rgba(0, 212, 255, 0.15);
         }
         
         .stat-value {
             font-size: 36px;
             font-weight: 800;
-            background: linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%);
+            background: linear-gradient(135deg, #00D4FF 0%, #00FF88 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -313,7 +261,7 @@
         }
         
         .vesting-table th {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(59, 130, 246, 0.08) 100%);
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.08) 0%, rgba(0, 255, 136, 0.08) 100%);
             padding: 20px;
             text-align: left;
             font-size: 12px;
@@ -321,7 +269,7 @@
             color: #94a3b8;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
         }
         
         .vesting-table td {
@@ -332,7 +280,7 @@
         }
         
         .vesting-table tr:hover td {
-            background: rgba(139, 92, 246, 0.03);
+            background: rgba(0, 212, 255, 0.03);
         }
         
         .category {
@@ -359,13 +307,13 @@
         }
         
         .badge.unlock {
-            background: linear-gradient(135deg, rgba(34, 197, 94, 0.2) 0%, rgba(16, 185, 129, 0.2) 100%);
-            color: #10b981;
-            border: 1px solid rgba(34, 197, 94, 0.3);
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.2) 0%, rgba(0, 212, 255, 0.2) 100%);
+            color: #00FF88;
+            border: 1px solid rgba(0, 255, 136, 0.3);
         }
         
         .badge.lock {
-            background: linear-gradient(135deg, rgba(239, 68, 68, 0.2) 0%, rgba(236, 72, 153, 0.2) 100%);
+            background: rgba(239, 68, 68, 0.15);
             color: #f87171;
             border: 1px solid rgba(239, 68, 68, 0.3);
         }
@@ -427,8 +375,6 @@
     </style>
 </head>
 <body>
-    <div class="background"></div>
-    
     <div class="container">
         <!-- Header -->
         <div class="header">
@@ -453,13 +399,12 @@
             <div class="card">
                 <div class="distribution-grid">
                     <div class="chart-wrapper">
-                        <div class="chart-glow"></div>
                         <canvas id="tokenChart"></canvas>
                     </div>
                     
                     <div class="allocations">
-                        <div class="allocation" style="--accent: #8B5CF6;">
-                            <div class="allocation-dot" style="background: #8B5CF6;"></div>
+                        <div class="allocation" style="--accent: #00D4FF;">
+                            <div class="allocation-dot" style="background: #00D4FF;"></div>
                             <div class="allocation-info">
                                 <div class="allocation-name">Ecosystem & Rewards</div>
                                 <div class="allocation-desc">Battle rewards, creator incentives, staking</div>
@@ -470,8 +415,8 @@
                             </div>
                         </div>
                         
-                        <div class="allocation" style="--accent: #3B82F6;">
-                            <div class="allocation-dot" style="background: #3B82F6;"></div>
+                        <div class="allocation" style="--accent: #FFB347;">
+                            <div class="allocation-dot" style="background: #FFB347;"></div>
                             <div class="allocation-info">
                                 <div class="allocation-name">Liquidity & Market Making</div>
                                 <div class="allocation-desc">DEX/CEX liquidity provision</div>
@@ -482,8 +427,8 @@
                             </div>
                         </div>
                         
-                        <div class="allocation" style="--accent: #EC4899;">
-                            <div class="allocation-dot" style="background: #EC4899;"></div>
+                        <div class="allocation" style="--accent: #FF6B6B;">
+                            <div class="allocation-dot" style="background: #FF6B6B;"></div>
                             <div class="allocation-info">
                                 <div class="allocation-name">Team & Advisors</div>
                                 <div class="allocation-desc">Core team and strategic advisors</div>
@@ -494,8 +439,8 @@
                             </div>
                         </div>
                         
-                        <div class="allocation" style="--accent: #10B981;">
-                            <div class="allocation-dot" style="background: #10B981;"></div>
+                        <div class="allocation" style="--accent: #4ECDC4;">
+                            <div class="allocation-dot" style="background: #4ECDC4;"></div>
                             <div class="allocation-info">
                                 <div class="allocation-name">Treasury & Governance</div>
                                 <div class="allocation-desc">DAO treasury, protocol upgrades</div>
@@ -506,8 +451,8 @@
                             </div>
                         </div>
                         
-                        <div class="allocation" style="--accent: #F59E0B;">
-                            <div class="allocation-dot" style="background: #F59E0B;"></div>
+                        <div class="allocation" style="--accent: #95E77E;">
+                            <div class="allocation-dot" style="background: #95E77E;"></div>
                             <div class="allocation-info">
                                 <div class="allocation-name">Airdrops & User Acquisition</div>
                                 <div class="allocation-desc">Community rewards, campaigns</div>
@@ -518,8 +463,8 @@
                             </div>
                         </div>
                         
-                        <div class="allocation" style="--accent: #6366F1;">
-                            <div class="allocation-dot" style="background: #6366F1;"></div>
+                        <div class="allocation" style="--accent: #A0A0FF;">
+                            <div class="allocation-dot" style="background: #A0A0FF;"></div>
                             <div class="allocation-info">
                                 <div class="allocation-name">Development Fund</div>
                                 <div class="allocation-desc">Continuous development, R&D</div>
@@ -530,8 +475,8 @@
                             </div>
                         </div>
                         
-                        <div class="allocation" style="--accent: #EF4444;">
-                            <div class="allocation-dot" style="background: #EF4444;"></div>
+                        <div class="allocation" style="--accent: #FFA0DD;">
+                            <div class="allocation-dot" style="background: #FFA0DD;"></div>
                             <div class="allocation-info">
                                 <div class="allocation-name">Private Sale</div>
                                 <div class="allocation-desc">Strategic partners, early backers</div>
@@ -542,8 +487,8 @@
                             </div>
                         </div>
                         
-                        <div class="allocation" style="--accent: #14B8A6;">
-                            <div class="allocation-dot" style="background: #14B8A6;"></div>
+                        <div class="allocation" style="--accent: #87CEEB;">
+                            <div class="allocation-dot" style="background: #87CEEB;"></div>
                             <div class="allocation-info">
                                 <div class="allocation-name">Foundation Reserve</div>
                                 <div class="allocation-desc">Long-term sustainability</div>
@@ -570,8 +515,8 @@
                         <div class="stat-label">Max Vesting</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-value">36M</div>
-                        <div class="stat-label">Team Lock</div>
+                        <div class="stat-value">85%</div>
+                        <div class="stat-label">Initially Locked</div>
                     </div>
                 </div>
             </div>
@@ -596,7 +541,7 @@
                             <tr>
                                 <td>
                                     <div class="category">
-                                        <span class="category-dot" style="background: #8B5CF6;"></span>
+                                        <span class="category-dot" style="background: #00D4FF;"></span>
                                         Ecosystem & Rewards
                                     </div>
                                 </td>
@@ -604,12 +549,12 @@
                                 <td><span class="badge lock">0%</span></td>
                                 <td>None</td>
                                 <td>48 months</td>
-                                <td>Milestone-based</td>
+                                <td>Linear monthly</td>
                             </tr>
                             <tr>
                                 <td>
                                     <div class="category">
-                                        <span class="category-dot" style="background: #3B82F6;"></span>
+                                        <span class="category-dot" style="background: #FFB347;"></span>
                                         Liquidity & Market Making
                                     </div>
                                 </td>
@@ -622,7 +567,7 @@
                             <tr>
                                 <td>
                                     <div class="category">
-                                        <span class="category-dot" style="background: #EC4899;"></span>
+                                        <span class="category-dot" style="background: #FF6B6B;"></span>
                                         Team & Advisors
                                     </div>
                                 </td>
@@ -635,7 +580,7 @@
                             <tr>
                                 <td>
                                     <div class="category">
-                                        <span class="category-dot" style="background: #10B981;"></span>
+                                        <span class="category-dot" style="background: #4ECDC4;"></span>
                                         Treasury & Governance
                                     </div>
                                 </td>
@@ -648,7 +593,7 @@
                             <tr>
                                 <td>
                                     <div class="category">
-                                        <span class="category-dot" style="background: #F59E0B;"></span>
+                                        <span class="category-dot" style="background: #95E77E;"></span>
                                         Airdrops & User Acquisition
                                     </div>
                                 </td>
@@ -656,12 +601,12 @@
                                 <td><span class="badge lock">0%</span></td>
                                 <td>None</td>
                                 <td>24 months</td>
-                                <td>Seasonal campaigns</td>
+                                <td>Linear monthly</td>
                             </tr>
                             <tr>
                                 <td>
                                     <div class="category">
-                                        <span class="category-dot" style="background: #6366F1;"></span>
+                                        <span class="category-dot" style="background: #A0A0FF;"></span>
                                         Development Fund
                                     </div>
                                 </td>
@@ -674,7 +619,7 @@
                             <tr>
                                 <td>
                                     <div class="category">
-                                        <span class="category-dot" style="background: #EF4444;"></span>
+                                        <span class="category-dot" style="background: #FFA0DD;"></span>
                                         Private Sale
                                     </div>
                                 </td>
@@ -687,7 +632,7 @@
                             <tr>
                                 <td>
                                     <div class="category">
-                                        <span class="category-dot" style="background: #14B8A6;"></span>
+                                        <span class="category-dot" style="background: #87CEEB;"></span>
                                         Foundation Reserve
                                     </div>
                                 </td>
@@ -724,8 +669,8 @@
                         <div class="stat-label">Full Unlock</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-value">Fair</div>
-                        <div class="stat-label">Launch Type</div>
+                        <div class="stat-value">6M</div>
+                        <div class="stat-label">Max Cliff</div>
                     </div>
                 </div>
             </div>
@@ -757,14 +702,14 @@
                 datasets: [{
                     data: [30, 15, 15, 10, 10, 10, 5, 5],
                     backgroundColor: [
-                        '#8B5CF6',
-                        '#3B82F6',
-                        '#EC4899',
-                        '#10B981',
-                        '#F59E0B',
-                        '#6366F1',
-                        '#EF4444',
-                        '#14B8A6'
+                        '#00D4FF',
+                        '#FFB347',
+                        '#FF6B6B',
+                        '#4ECDC4',
+                        '#95E77E',
+                        '#A0A0FF',
+                        '#FFA0DD',
+                        '#87CEEB'
                     ],
                     borderWidth: 0,
                     hoverOffset: 24
@@ -779,7 +724,7 @@
                         backgroundColor: 'rgba(10, 10, 20, 0.95)',
                         titleColor: '#ffffff',
                         bodyColor: '#94a3b8',
-                        borderColor: 'rgba(139, 92, 246, 0.2)',
+                        borderColor: 'rgba(0, 212, 255, 0.2)',
                         borderWidth: 1,
                         padding: 16,
                         cornerRadius: 12,
@@ -842,13 +787,13 @@
                     datasets: [{
                         label: 'Cumulative Unlock',
                         data: [15, 16, 18, 25, 35, 45, 65, 85, 100],
-                        borderColor: '#8B5CF6',
-                        backgroundColor: 'rgba(139, 92, 246, 0.1)',
+                        borderColor: '#00D4FF',
+                        backgroundColor: 'rgba(0, 212, 255, 0.1)',
                         tension: 0.4,
                         fill: true,
                         pointRadius: 5,
                         pointHoverRadius: 7,
-                        pointBackgroundColor: '#8B5CF6',
+                        pointBackgroundColor: '#00D4FF',
                         pointBorderColor: '#000000',
                         pointBorderWidth: 2,
                         borderWidth: 3
@@ -867,7 +812,7 @@
                             backgroundColor: 'rgba(10, 10, 20, 0.95)',
                             titleColor: '#ffffff',
                             bodyColor: '#94a3b8',
-                            borderColor: 'rgba(139, 92, 246, 0.2)',
+                            borderColor: 'rgba(0, 212, 255, 0.2)',
                             borderWidth: 1,
                             padding: 16,
                             cornerRadius: 12,
