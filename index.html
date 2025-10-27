@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AIBG Tokenomics & Vesting Schedule</title>
     <meta property="og:title" content="AIBG Tokenomics Overview">
-<meta property="og:description" content="Explore AIBG’s transparent token distribution and vesting schedule.">
-<meta property="og:image" content="https://aibattleground-ai.github.io/assets/og-tokenomics.png">
-<meta property="og:url" content="https://aibattleground-ai.github.io/aibg-tokenomics/">
-<meta name="twitter:card" content="summary_large_image">
+    <meta property="og:description" content="Explore AIBG's transparent token distribution and vesting schedule.">
+    <meta property="og:image" content="https://aibattleground-ai.github.io/assets/og-tokenomics.png">
+    <meta property="og:url" content="https://aibattleground-ai.github.io/aibg-tokenomics/">
+    <meta name="twitter:card" content="summary_large_image">
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -237,121 +236,125 @@
         }
         
         .stat-value {
-            font-size: 36px;
+            font-size: 32px;
             font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 8px;
             background: linear-gradient(135deg, #00D4FF 0%, #00FF88 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 8px;
         }
         
         .stat-label {
-            font-size: 12px;
-            color: #94a3b8;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
+            font-size: 13px;
+            color: #64748b;
             font-weight: 600;
+            letter-spacing: 0.02em;
         }
         
-        /* Vesting Table */
-        .table-wrapper {
-            overflow-x: auto;
-            margin-bottom: 48px;
-        }
-        
+        /* Vesting Timeline */
         .vesting-table {
             width: 100%;
             border-collapse: separate;
             border-spacing: 0;
+            margin-top: 48px;
         }
         
         .vesting-table th {
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.08) 0%, rgba(0, 255, 136, 0.08) 100%);
-            padding: 20px;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 16px 20px;
             text-align: left;
             font-size: 12px;
             font-weight: 700;
-            color: #94a3b8;
+            color: #64748b;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+            letter-spacing: 0.08em;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
         }
         
         .vesting-table td {
             padding: 20px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
             font-size: 14px;
             color: #e2e8f0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.02);
         }
         
         .vesting-table tr:hover td {
-            background: rgba(0, 212, 255, 0.03);
+            background: rgba(255, 255, 255, 0.01);
         }
         
+        /* Category */
         .category {
             display: flex;
             align-items: center;
-            gap: 12px;
             font-weight: 600;
         }
         
         .category-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 2px;
+            width: 10px;
+            height: 10px;
+            border-radius: 3px;
+            margin-right: 12px;
         }
         
+        /* Badge */
         .badge {
             display: inline-block;
-            padding: 4px 12px;
-            border-radius: 8px;
+            padding: 4px 10px;
             font-size: 11px;
             font-weight: 700;
+            border-radius: 6px;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.04em;
         }
         
         .badge.unlock {
-            background: linear-gradient(135deg, rgba(0, 255, 136, 0.2) 0%, rgba(0, 212, 255, 0.2) 100%);
-            color: #00FF88;
-            border: 1px solid rgba(0, 255, 136, 0.3);
+            background: rgba(0, 212, 255, 0.15);
+            color: #00D4FF;
+            border: 1px solid rgba(0, 212, 255, 0.2);
         }
         
         .badge.lock {
-            background: rgba(239, 68, 68, 0.15);
-            color: #f87171;
-            border: 1px solid rgba(239, 68, 68, 0.3);
+            background: rgba(255, 107, 107, 0.1);
+            color: #FF6B6B;
+            border: 1px solid rgba(255, 107, 107, 0.2);
         }
         
-        /* Timeline */
+        /* Timeline Box */
         .timeline-box {
             background: rgba(255, 255, 255, 0.02);
-            border-radius: 24px;
+            border-radius: 20px;
             padding: 32px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            margin-top: 40px;
         }
         
         .timeline-header {
-            margin-bottom: 32px;
+            margin-bottom: 24px;
         }
         
         .timeline-title {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 700;
-            color: #f1f5f9;
+            color: #ffffff;
         }
         
         .chart-container {
-            height: 320px;
+            height: 300px;
+            position: relative;
         }
         
+        /* Mobile Responsive */
         @media (max-width: 1024px) {
             .distribution-grid {
                 grid-template-columns: 1fr;
+                gap: 40px;
             }
             
             .chart-wrapper {
+                width: 400px;
+                height: 400px;
                 margin: 0 auto;
             }
             
@@ -362,33 +365,49 @@
         
         @media (max-width: 640px) {
             .title {
-                font-size: 42px;
+                font-size: 40px;
+            }
+            
+            .tab-btn {
+                padding: 10px 20px;
+                font-size: 14px;
             }
             
             .card {
                 padding: 32px 20px;
             }
             
+            .chart-wrapper {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .allocation {
+                padding: 16px;
+            }
+            
             .stats {
                 grid-template-columns: 1fr;
             }
             
-            .chart-wrapper {
-                width: 320px;
-                height: 320px;
+            .vesting-table {
+                font-size: 12px;
+            }
+            
+            .vesting-table th,
+            .vesting-table td {
+                padding: 12px 10px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
         <div class="header">
             <h1 class="title">AIBG Tokenomics</h1>
-            <p class="subtitle">Powering the Next Generation of AI-Driven Content Battles</p>
+            <p class="subtitle">Transparent distribution designed for long-term sustainability</p>
         </div>
         
-        <!-- Tabs -->
         <div class="tabs-container">
             <div class="tabs">
                 <button class="tab-btn active" onclick="switchTab(event, 'distribution')">
@@ -400,7 +419,6 @@
             </div>
         </div>
         
-        <!-- Distribution Content -->
         <div id="distribution" class="content active">
             <div class="card">
                 <div class="distribution-grid">
@@ -410,10 +428,10 @@
                     
                     <div class="allocations">
                         <div class="allocation" style="--accent: #00D4FF;">
-                            <div class="allocation-dot" style="background: #00D4FF;"></div>
+                            <span class="allocation-dot" style="background: #00D4FF;"></span>
                             <div class="allocation-info">
                                 <div class="allocation-name">Ecosystem & Rewards</div>
-                                <div class="allocation-desc">Battle rewards, creator incentives, staking</div>
+                                <div class="allocation-desc">Player rewards, tournaments, staking</div>
                             </div>
                             <div class="allocation-value">
                                 <div class="allocation-percent">30%</div>
@@ -422,7 +440,7 @@
                         </div>
                         
                         <div class="allocation" style="--accent: #FFB347;">
-                            <div class="allocation-dot" style="background: #FFB347;"></div>
+                            <span class="allocation-dot" style="background: #FFB347;"></span>
                             <div class="allocation-info">
                                 <div class="allocation-name">Liquidity & Market Making</div>
                                 <div class="allocation-desc">DEX/CEX liquidity provision</div>
@@ -434,7 +452,7 @@
                         </div>
                         
                         <div class="allocation" style="--accent: #FF6B6B;">
-                            <div class="allocation-dot" style="background: #FF6B6B;"></div>
+                            <span class="allocation-dot" style="background: #FF6B6B;"></span>
                             <div class="allocation-info">
                                 <div class="allocation-name">Team & Advisors</div>
                                 <div class="allocation-desc">Core team and strategic advisors</div>
@@ -446,10 +464,10 @@
                         </div>
                         
                         <div class="allocation" style="--accent: #4ECDC4;">
-                            <div class="allocation-dot" style="background: #4ECDC4;"></div>
+                            <span class="allocation-dot" style="background: #4ECDC4;"></span>
                             <div class="allocation-info">
                                 <div class="allocation-name">Treasury & Governance</div>
-                                <div class="allocation-desc">DAO treasury, protocol upgrades</div>
+                                <div class="allocation-desc">DAO controlled treasury</div>
                             </div>
                             <div class="allocation-value">
                                 <div class="allocation-percent">10%</div>
@@ -458,10 +476,10 @@
                         </div>
                         
                         <div class="allocation" style="--accent: #95E77E;">
-                            <div class="allocation-dot" style="background: #95E77E;"></div>
+                            <span class="allocation-dot" style="background: #95E77E;"></span>
                             <div class="allocation-info">
                                 <div class="allocation-name">Airdrops & User Acquisition</div>
-                                <div class="allocation-desc">Community rewards, campaigns</div>
+                                <div class="allocation-desc">Community growth campaigns</div>
                             </div>
                             <div class="allocation-value">
                                 <div class="allocation-percent">10%</div>
@@ -470,7 +488,7 @@
                         </div>
                         
                         <div class="allocation" style="--accent: #A0A0FF;">
-                            <div class="allocation-dot" style="background: #A0A0FF;"></div>
+                            <span class="allocation-dot" style="background: #A0A0FF;"></span>
                             <div class="allocation-info">
                                 <div class="allocation-name">Development Fund</div>
                                 <div class="allocation-desc">Continuous development, R&D</div>
@@ -482,7 +500,7 @@
                         </div>
                         
                         <div class="allocation" style="--accent: #FFA0DD;">
-                            <div class="allocation-dot" style="background: #FFA0DD;"></div>
+                            <span class="allocation-dot" style="background: #FFA0DD;"></span>
                             <div class="allocation-info">
                                 <div class="allocation-name">Private Sale</div>
                                 <div class="allocation-desc">Strategic partners, early backers</div>
@@ -494,7 +512,7 @@
                         </div>
                         
                         <div class="allocation" style="--accent: #87CEEB;">
-                            <div class="allocation-dot" style="background: #87CEEB;"></div>
+                            <span class="allocation-dot" style="background: #87CEEB;"></span>
                             <div class="allocation-info">
                                 <div class="allocation-name">Foundation Reserve</div>
                                 <div class="allocation-desc">Long-term sustainability</div>
@@ -509,10 +527,6 @@
                 
                 <div class="stats">
                     <div class="stat">
-                        <div class="stat-value">1B</div>
-                        <div class="stat-label">Total Supply</div>
-                    </div>
-                    <div class="stat">
                         <div class="stat-value">15%</div>
                         <div class="stat-label">Initial Circulating</div>
                     </div>
@@ -521,136 +535,137 @@
                         <div class="stat-label">Max Vesting</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-value">85%</div>
-                        <div class="stat-label">Initially Locked</div>
+                        <div class="stat-value">60M</div>
+                        <div class="stat-label">Team Lock</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">1B</div>
+                        <div class="stat-label">Total Supply</div>
                     </div>
                 </div>
             </div>
         </div>
         
-        <!-- Vesting Content -->
         <div id="vesting" class="content">
             <div class="card">
-                <div class="table-wrapper">
-                    <table class="vesting-table">
-                        <thead>
-                            <tr>
-                                <th>Category</th>
-                                <th>Allocation</th>
-                                <th>TGE Unlock</th>
-                                <th>Cliff</th>
-                                <th>Vesting</th>
-                                <th>Schedule</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <div class="category">
-                                        <span class="category-dot" style="background: #00D4FF;"></span>
-                                        Ecosystem & Rewards
-                                    </div>
-                                </td>
-                                <td>300,000,000</td>
-                                <td><span class="badge lock">0%</span></td>
-                                <td>None</td>
-                                <td>48 months</td>
-                                <td>Linear monthly</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="category">
-                                        <span class="category-dot" style="background: #FFB347;"></span>
-                                        Liquidity & Market Making
-                                    </div>
-                                </td>
-                                <td>150,000,000</td>
-                                <td><span class="badge unlock">100%</span></td>
-                                <td>None</td>
-                                <td>Immediate</td>
-                                <td>Fully unlocked</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="category">
-                                        <span class="category-dot" style="background: #FF6B6B;"></span>
-                                        Team & Advisors
-                                    </div>
-                                </td>
-                                <td>150,000,000</td>
-                                <td><span class="badge lock">0%</span></td>
-                                <td>6 months</td>
-                                <td>36 months</td>
-                                <td>Linear monthly</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="category">
-                                        <span class="category-dot" style="background: #4ECDC4;"></span>
-                                        Treasury & Governance
-                                    </div>
-                                </td>
-                                <td>100,000,000</td>
-                                <td><span class="badge lock">0%</span></td>
-                                <td>None</td>
-                                <td>60 months</td>
-                                <td>DAO governance</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="category">
-                                        <span class="category-dot" style="background: #95E77E;"></span>
-                                        Airdrops & User Acquisition
-                                    </div>
-                                </td>
-                                <td>100,000,000</td>
-                                <td><span class="badge lock">0%</span></td>
-                                <td>None</td>
-                                <td>24 months</td>
-                                <td>Linear monthly</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="category">
-                                        <span class="category-dot" style="background: #A0A0FF;"></span>
-                                        Development Fund
-                                    </div>
-                                </td>
-                                <td>100,000,000</td>
-                                <td><span class="badge lock">0%</span></td>
-                                <td>None</td>
-                                <td>60 months</td>
-                                <td>Linear monthly</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="category">
-                                        <span class="category-dot" style="background: #FFA0DD;"></span>
-                                        Private Sale
-                                    </div>
-                                </td>
-                                <td>50,000,000</td>
-                                <td><span class="badge lock">0%</span></td>
-                                <td>3 months</td>
-                                <td>12 months</td>
-                                <td>Linear monthly</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="category">
-                                        <span class="category-dot" style="background: #87CEEB;"></span>
-                                        Foundation Reserve
-                                    </div>
-                                </td>
-                                <td>50,000,000</td>
-                                <td><span class="badge lock">0%</span></td>
-                                <td>12 months</td>
-                                <td>36 months</td>
-                                <td>Quarterly release</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <table class="vesting-table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Allocation</th>
+                            <th>TGE Unlock</th>
+                            <th>Cliff</th>
+                            <th>Vesting</th>
+                            <th>Schedule</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="category">
+                                    <span class="category-dot" style="background: #00D4FF;"></span>
+                                    Ecosystem & Rewards
+                                </div>
+                            </td>
+                            <td>300,000,000</td>
+                            <td><span class="badge lock">0%</span></td>
+                            <td>None</td>
+                            <td>48 months</td>
+                            <td>Milestone-based</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="category">
+                                    <span class="category-dot" style="background: #FFB347;"></span>
+                                    Liquidity & Market Making
+                                </div>
+                            </td>
+                            <td>150,000,000</td>
+                            <td><span class="badge unlock">100%</span></td>
+                            <td>None</td>
+                            <td>Immediate</td>
+                            <td>Fully unlocked</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="category">
+                                    <span class="category-dot" style="background: #FF6B6B;"></span>
+                                    Team & Advisors
+                                </div>
+                            </td>
+                            <td>150,000,000</td>
+                            <td><span class="badge lock">0%</span></td>
+                            <td>6 months</td>
+                            <td>60 months</td>
+                            <td>Linear monthly</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="category">
+                                    <span class="category-dot" style="background: #4ECDC4;"></span>
+                                    Treasury & Governance
+                                </div>
+                            </td>
+                            <td>100,000,000</td>
+                            <td><span class="badge lock">0%</span></td>
+                            <td>None</td>
+                            <td>60 months</td>
+                            <td>DAO governance</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="category">
+                                    <span class="category-dot" style="background: #95E77E;"></span>
+                                    Airdrops & User Acquisition
+                                </div>
+                            </td>
+                            <td>100,000,000</td>
+                            <td><span class="badge lock">0%</span></td>
+                            <td>None</td>
+                            <td>24 months</td>
+                            <td>Seasonal campaigns</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="category">
+                                    <span class="category-dot" style="background: #A0A0FF;"></span>
+                                    Development Fund
+                                </div>
+                            </td>
+                            <td>100,000,000</td>
+                            <td><span class="badge lock">0%</span></td>
+                            <td>None</td>
+                            <td>60 months</td>
+                            <td>Linear monthly</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="category">
+                                    <span class="category-dot" style="background: #FFA0DD;"></span>
+                                    Private Sale
+                                </div>
+                            </td>
+                            <td>50,000,000</td>
+                            <td><span class="badge lock">0%</span></td>
+                            <td>3 months</td>
+                            <td>12 months</td>
+                            <td>Linear monthly</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="category">
+                                    <span class="category-dot" style="background: #87CEEB;"></span>
+                                    Foundation Reserve
+                                </div>
+                            </td>
+                            <td>50,000,000</td>
+                            <td><span class="badge lock">0%</span></td>
+                            <td>12 months</td>
+                            <td>36 months</td>
+                            <td>Quarterly release</td>
+                        </tr>
+                    </tbody>
+                </table>
                 
                 <div class="timeline-box">
                     <div class="timeline-header">
@@ -675,8 +690,8 @@
                         <div class="stat-label">Full Unlock</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-value">6M</div>
-                        <div class="stat-label">Max Cliff</div>
+                        <div class="stat-value">Fair</div>
+                        <div class="stat-label">Launch Type</div>
                     </div>
                 </div>
             </div>
@@ -783,7 +798,7 @@
             }
         });
         
-        // Vesting Timeline Chart
+        // Vesting Timeline Chart - Updated for 60 months team vesting
         const vestingCtx = document.getElementById('vestingChart');
         if (vestingCtx) {
             new Chart(vestingCtx, {
@@ -792,7 +807,7 @@
                     labels: ['TGE', '3M', '6M', '12M', '18M', '24M', '36M', '48M', '60M'],
                     datasets: [{
                         label: 'Cumulative Unlock',
-                        data: [15, 16, 18, 25, 35, 45, 65, 85, 100],
+                        data: [15, 15.8, 16.5, 23, 32, 42, 58, 78, 100],
                         borderColor: '#00D4FF',
                         backgroundColor: 'rgba(0, 212, 255, 0.1)',
                         tension: 0.4,
