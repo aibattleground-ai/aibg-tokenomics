@@ -315,6 +315,12 @@
             border: 1px solid rgba(0, 212, 255, 0.2);
         }
         
+        .badge.partial {
+            background: rgba(255, 179, 71, 0.15);
+            color: #FFB347;
+            border: 1px solid rgba(255, 179, 71, 0.2);
+        }
+        
         .badge.lock {
             background: rgba(255, 107, 107, 0.1);
             color: #FF6B6B;
@@ -532,11 +538,11 @@
                     </div>
                     <div class="stat">
                         <div class="stat-value">60M</div>
-                        <div class="stat-label">Max Vesting</div>
+                        <div class="stat-label">Full Vesting</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-value">60M</div>
-                        <div class="stat-label">Team Lock</div>
+                        <div class="stat-value">6M</div>
+                        <div class="stat-label">Team Cliff</div>
                     </div>
                     <div class="stat">
                         <div class="stat-value">1B</div>
@@ -563,25 +569,12 @@
                         <tr>
                             <td>
                                 <div class="category">
-                                    <span class="category-dot" style="background: #00D4FF;"></span>
-                                    Ecosystem & Rewards
-                                </div>
-                            </td>
-                            <td>300,000,000</td>
-                            <td><span class="badge lock">0%</span></td>
-                            <td>None</td>
-                            <td>48 months</td>
-                            <td>Milestone-based</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="category">
                                     <span class="category-dot" style="background: #FFB347;"></span>
                                     Liquidity & Market Making
                                 </div>
                             </td>
                             <td>150,000,000</td>
-                            <td><span class="badge unlock">100%</span></td>
+                            <td><span class="badge unlock">80%</span></td>
                             <td>None</td>
                             <td>Immediate</td>
                             <td>Fully unlocked</td>
@@ -589,13 +582,39 @@
                         <tr>
                             <td>
                                 <div class="category">
-                                    <span class="category-dot" style="background: #FF6B6B;"></span>
-                                    Team & Advisors
+                                    <span class="category-dot" style="background: #00D4FF;"></span>
+                                    Ecosystem & Rewards
                                 </div>
                             </td>
-                            <td>150,000,000</td>
-                            <td><span class="badge lock">0%</span></td>
-                            <td>6 months</td>
+                            <td>300,000,000</td>
+                            <td><span class="badge partial">5%</span></td>
+                            <td>None</td>
+                            <td>48 months</td>
+                            <td>Linear monthly</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="category">
+                                    <span class="category-dot" style="background: #95E77E;"></span>
+                                    Airdrops & User Acquisition
+                                </div>
+                            </td>
+                            <td>100,000,000</td>
+                            <td><span class="badge partial">10%</span></td>
+                            <td>None</td>
+                            <td>24 months</td>
+                            <td>Linear monthly</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="category">
+                                    <span class="category-dot" style="background: #A0A0FF;"></span>
+                                    Development Fund
+                                </div>
+                            </td>
+                            <td>100,000,000</td>
+                            <td><span class="badge partial">5%</span></td>
+                            <td>None</td>
                             <td>60 months</td>
                             <td>Linear monthly</td>
                         </tr>
@@ -608,33 +627,20 @@
                             </td>
                             <td>100,000,000</td>
                             <td><span class="badge lock">0%</span></td>
-                            <td>None</td>
+                            <td>1 month</td>
                             <td>60 months</td>
                             <td>DAO governance</td>
                         </tr>
                         <tr>
                             <td>
                                 <div class="category">
-                                    <span class="category-dot" style="background: #95E77E;"></span>
-                                    Airdrops & User Acquisition
+                                    <span class="category-dot" style="background: #FF6B6B;"></span>
+                                    Team & Advisors
                                 </div>
                             </td>
-                            <td>100,000,000</td>
+                            <td>150,000,000</td>
                             <td><span class="badge lock">0%</span></td>
-                            <td>None</td>
-                            <td>24 months</td>
-                            <td>Seasonal campaigns</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="category">
-                                    <span class="category-dot" style="background: #A0A0FF;"></span>
-                                    Development Fund
-                                </div>
-                            </td>
-                            <td>100,000,000</td>
-                            <td><span class="badge lock">0%</span></td>
-                            <td>None</td>
+                            <td>6 months</td>
                             <td>60 months</td>
                             <td>Linear monthly</td>
                         </tr>
@@ -798,7 +804,37 @@
             }
         });
         
-        // Vesting Timeline Chart - Updated for 60 months team vesting
+        /*
+         * VESTING CALCULATION
+         * 
+         * TGE (Month 0): 15% = 150M
+         * - Liquidity: 80% of 150M = 120M (12%)
+         * - Ecosystem: 5% of 300M = 15M (1.5%)
+         * - Airdrops: 10% of 100M = 10M (1%)
+         * - Development: 5% of 100M = 5M (0.5%)
+         * 
+         * Monthly unlocks after TGE:
+         * - Ecosystem: (300M - 15M) / 48 = 5.94M/month (0.594%)
+         * - Airdrops: (100M - 10M) / 24 = 3.75M/month (0.375%)
+         * - Development: (100M - 5M) / 60 = 1.58M/month (0.158%)
+         * - Treasury: 100M / 60 = 1.67M/month (0.167%) - starts month 2 (1 month cliff)
+         * - Private Sale: 50M / 12 = 4.17M/month (0.417%) - starts month 4 (3 month cliff)
+         * - Team: 150M / 60 = 2.5M/month (0.25%) - starts month 7 (6 month cliff)
+         * - Foundation: 50M / 36 = 1.39M/quarter (0.139%) - starts month 13 (12 month cliff)
+         * - Liquidity remaining: 30M (3%) available as needed
+         * 
+         * Calculated milestones:
+         * TGE: 15%
+         * 3M: 15 + (3 * 1.13) + (2 * 0.167) = 18.7%
+         * 6M: 18.7 + (3 * 1.13) + (3 * 0.167) + (3 * 0.417) = 23.1%
+         * 12M: 23.1 + (6 * 1.13) + (6 * 0.167) + (6 * 0.417) + (6 * 0.25) = 34.9%
+         * 18M: 34.9 + (6 * 1.13) + (6 * 0.167) + (6 * 0.25) + (2 * 0.139) = 44.5%
+         * 24M: Airdrops done + continue others = 55.8%
+         * 36M: 72.1%
+         * 48M: Ecosystem done = 87.2%
+         * 60M: Everything done = 100%
+         */
+        
         const vestingCtx = document.getElementById('vestingChart');
         if (vestingCtx) {
             new Chart(vestingCtx, {
@@ -807,7 +843,7 @@
                     labels: ['TGE', '3M', '6M', '12M', '18M', '24M', '36M', '48M', '60M'],
                     datasets: [{
                         label: 'Cumulative Unlock',
-                        data: [15, 15.8, 16.5, 23, 32, 42, 58, 78, 100],
+                        data: [15, 18.7, 23.1, 34.9, 44.5, 55.8, 72.1, 87.2, 100],
                         borderColor: '#00D4FF',
                         backgroundColor: 'rgba(0, 212, 255, 0.1)',
                         tension: 0.4,
